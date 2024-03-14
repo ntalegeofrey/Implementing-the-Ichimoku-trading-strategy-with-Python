@@ -89,10 +89,12 @@ df['positions'] = np.select(conditions, choices, default=np.nan)
 
 # Print the strategy performance
 print(df.tail(30))
+overall_profit = capital - initial_capital
+pl_percentage = (capital - initial_capital) / initial_capital * 100
 print(f'Initial capital: {initial_capital} USDT')
 print(f'Final capital: {capital} USDT')
-print(f'Profit: {profit} USDT')
-print(f'Percentage gain: {profit / initial_capital * 100}%')
+print(f'Overall Profit: {overall_profit:.2f} USDT')
+print(f'Percentage Profit Gain: {pl_percentage:.2f}%')
 
 
 # Plot the Ichimoku strategy and the close price
